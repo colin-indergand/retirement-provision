@@ -1,0 +1,92 @@
+/* ===== Lunaris Landing Styles ===== */
+:root{
+  --bg: #0b0b12;
+  --text: #EAEAFB;
+  --muted: #B9B6D9;
+  --accent: #7C3AED;      /* Lunaris Violett */
+  --accent-2: #A78BFA;    /* helleres Violett */
+  --card-bg: rgba(16,12,24,.55);
+  --card-border: rgba(124,58,237,.25);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text);
+  background-color: var(--bg);
+  background-image: url("Altersvorsorge.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* dunkler/violarter Overlay für Lesbarkeit */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(1200px 800px at 15% 5%, rgba(124,58,237,.25), transparent 60%),
+    linear-gradient(rgba(10,10,16,.65), rgba(10,10,16,.75));
+  mix-blend-mode: normal;
+}
+
+/* Header */
+header{
+  display:flex; align-items:center; justify-content:center;
+  padding: clamp(16px, 2vw, 32px);
+}
+
+h1{
+  margin: 30px;
+  font-weight:800;
+  letter-spacing:.3px;
+  font-size: clamp(45px, 4vw, 60px);
+  line-height:1.1;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip:text; background-clip:text; color: transparent;
+  text-shadow: 0 2px 20px rgba(26, 10, 72, 0.25);
+}
+
+/* Main – zentrierte Card */
+main{
+  min-height: calc(100vh - 120px);
+  display:grid; place-items:center;
+  padding: clamp(16px, 3vw, 48px);
+}
+
+.main{
+  width: min(920px, 92vw);
+  padding: clamp(20px, 4vw, 48px);
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+.main h2{
+  margin:0 0 10px;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight:700;
+}
+
+
+.main p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height:1.6;
+}
+
+
+/* Mobile Feinschliff */
+@media (max-width: 520px){
+  header{ padding:18px; }
+  .main{ padding:18px; }
+}
