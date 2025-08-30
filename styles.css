@@ -55,9 +55,11 @@ h1{
 
 /* Main – zentrierte Card */
 main{
-  min-height: calc(100vh - 120px);
-  display:grid; place-items:center;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: start center;       /* vertikal oben, horizontal mittig */
   padding: clamp(16px, 3vw, 48px);
+  padding-top: clamp(36px, 18vh, 120px);  /* Abstand vom oberen Rand */
 }
 
 .main{
@@ -90,3 +92,4 @@ main{
   header{ padding:18px; }
   .main{ padding:18px; }
 }
+
